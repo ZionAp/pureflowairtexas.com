@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function () {
         year.textContent = new Date().getFullYear();
     }
 
-    // Hero slideshow (rotating job photos) - starts after initial paint
+    // Hero slideshow (rotating job photos) - fades in after initial paint
     (function() {
         const slideshow = document.getElementById('heroSlideshow');
         const slides = Array.from(document.querySelectorAll('.hero-slide'));
@@ -451,13 +451,11 @@ document.addEventListener('DOMContentLoaded', function () {
             current = (i + slides.length) % slides.length;
             slides[current].classList.add('is-active');
         }
-        // Delay slideshow start so LCP is measured on the gradient/text first
         setTimeout(function() {
-            slideshow.style.display = 'block';
             slideshow.style.display = 'block';
             slideshow.style.opacity = '1';
             slides[0].classList.add('is-active');
             setInterval(function() { showSlide(current + 1); }, 5000);
-        }, 2500);
+        }, 3000);
     })();
 });

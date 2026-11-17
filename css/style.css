@@ -454,7 +454,7 @@ a {
     min-height: 100svh;
     display: flex;
     align-items: center;
-    background-color: #0d9488;
+    background-color: #0f172a;
     overflow: hidden;
     padding-top: 120px;
 }
@@ -468,21 +468,6 @@ a {
 
 
 
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    overflow: hidden;
-    background: linear-gradient(135deg, #0d9488 0%, #06b6d4 40%, #0891b2 100%);
-}
-
-.hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255,255,255,0.15) 0%, transparent 70%);
-}
 
 /* Hero slideshow (rotating job photos) - fades in after initial paint */
 .hero-slideshow {
@@ -517,3 +502,26 @@ a {
 .hero-slide--4 { background-image: url('../images/WhatsApp-Image-2026-03-23-at-01.54.35.webp'); }
 .hero-slide--5 { background-image: url('../images/WhatsApp-Image-2026-03-25-at-04.34.41-768x1024.webp'); }
 .hero-slide--6 { background-image: url('../images/WhatsApp-Image-2026-03-19-at-22.59.17-576x1024.webp'); }
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0d9488 0%, #06b6d4 40%, #0891b2 100%);
+}
+.hero-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+}
+.hero-bg-overlay, .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255,255,255,0.12) 0%, transparent 70%);
+}
