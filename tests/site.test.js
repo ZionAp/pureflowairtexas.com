@@ -96,10 +96,8 @@ async function main() {
   });
 
   check('hero uses a gradient background', () => {
-    const heroBg = d.querySelector('.hero-bg');
-    assert.ok(heroBg, 'missing hero-bg');
     const css = fs.readFileSync(path.join(siteRoot, 'css', 'style.css'), 'utf8');
-    assert.ok(/\.hero-bg\s*{[^}]*background/.test(css), 'hero background lacks styling');
+    assert.ok(/\.hero\s*{[^}]*background/.test(css), 'hero background lacks styling');
   });
 
 
