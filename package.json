@@ -1,0 +1,26 @@
+{
+  "name": "pureflow-air-texas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Austin air duct cleaning, AC cleaning, and indoor air quality website",
+  "type": "module",
+  "scripts": {
+    "start": "node tests/server.js",
+    "generate:areas": "node scripts/generate-areas.mjs",
+    "generate:services": "node scripts/generate-services.mjs",
+    "generate:extras": "node scripts/generate-extras.mjs",
+    "test": "node tests/site.test.js && node tests/server.test.js && node tests/areas.test.js",
+    "lint:html": "html-validate index.html areas/*.html services/*.html blog/*.html cost/*.html problems/*.html brands/*.html neighborhoods/*.html compare/*.html contact.html service-areas.html 404.html",
+    "lint:css": "csstree-validator css/style.css",
+    "lint": "npm run lint:html && npm run lint:css && node --check js/main.js",
+    "verify": "npm run lint && npm test"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  },
+  "devDependencies": {
+    "csstree-validator": "^4.0.1",
+    "html-validate": "^9.7.1",
+    "jsdom": "^28.1.0"
+  }
+}
