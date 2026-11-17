@@ -95,9 +95,14 @@ async function main() {
     assert.ok(fs.existsSync(path.join(siteRoot, 'images', 'og-image.png')), 'missing branded og-image');
   });
 
-  check('hero uses a CSS gradient background', () => {
+  check('hero uses a background image with gradient overlay', () => {
+    const heroBg = d.querySelector('.hero-bg');
+    assert.ok(heroBg, 'missing hero-bg');
+    const img = heroBg.querySelector('img');
+    assert.ok(img, 'missing hero image');
+    assert.ok(img.getAttribute('fetchpriority') === 'high', 'hero image not high priority');
     const css = fs.readFileSync(path.join(siteRoot, 'css', 'style.css'), 'utf8');
-    assert.ok(/\.hero-bg\s*{[^}]*background/.test(css), 'hero background lacks styling');
+    assert.ok(/\.hero-bg::after\s*{[^}]*background/.test(css) || /\.hero-bg\s*{[^}]*background/.test(css), 'hero background lacks styling');
   });
 
   check('testimonials carousel does not break LCP reporting', () => {
