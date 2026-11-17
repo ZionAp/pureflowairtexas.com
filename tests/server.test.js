@@ -43,7 +43,7 @@ try {
     const res = await request(port, '/');
     assert.equal(res.status, 200);
     assert.match(res.headers['content-type'], /^text\/html/);
-    assert.match(res.body, /Austin Locksmith Pros/);
+    assert.match(res.body, /PureFlow Air Texas/);
   });
 
   await check('serves css and js with correct content types', async () => {

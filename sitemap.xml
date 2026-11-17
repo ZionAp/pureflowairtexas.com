@@ -7,9 +7,39 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://pureflowairtexas.com/services/air-duct-cleaning.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/services/ac-cleaning.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/services/dryer-vent-cleaning.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/services/air-quality-testing.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://pureflowairtexas.com/cost/air-duct-cleaning-cost-austin.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/404.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
     </url>
 </urlset>
