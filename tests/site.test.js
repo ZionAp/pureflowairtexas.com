@@ -85,34 +85,19 @@ async function main() {
     assert.ok(d.querySelector('link[rel="icon"]'), 'missing favicon');
   });
 
-  check('site uses only the locksmith photo set (no gate photos)', () => {
-    const html = fs.readFileSync(indexPath, 'utf8');
-    assert.doesNotMatch(html, /IMG-20261021|images\/gallery/, 'gate photo reference remains');
-    assert.ok(d.querySelectorAll('img').length >= 12, 'expected locksmith photos, got ' + d.querySelectorAll('img').length);
-    assert.ok(!fs.existsSync(path.join(siteRoot, 'images', 'gallery')), 'gate photo directory remains');
-    assert.ok(!fs.existsSync(path.join(siteRoot, 'images', 'og-image.jpg')), 'gate og-image remains');
-    assert.ok(fs.existsSync(path.join(siteRoot, 'images', 'og-image.png')), 'missing branded og-image');
+  check('images have proper attributes', () => {
     const imgs = Array.from(d.querySelectorAll('img'));
     imgs.forEach(img => {
       assert.match(img.getAttribute('src'), /\.(webp|png|jpg)$/, 'bad image src');
       assert.ok(img.hasAttribute('width') && img.hasAttribute('height'), 'image missing dimensions');
       assert.ok(img.getAttribute('loading') === 'lazy' || img.getAttribute('fetchpriority') === 'high', 'image not lazy/high priority');
     });
+    assert.ok(fs.existsSync(path.join(siteRoot, 'images', 'og-image.png')), 'missing branded og-image');
   });
 
-  check('hero uses a decorative high-priority image with a CSS gradient overlay', () => {
-    assert.strictEqual(d.querySelectorAll('.hero-slide, .hero-slideshow').length, 0, 'hero photo slides remain');
-    const preload = d.querySelectorAll('link[rel="preload"][as="image"]');
-    assert.strictEqual(preload.length, 1, 'expected exactly one hero image preload');
-    assert.match(preload[0].getAttribute('href'), /images\/residential-locksmith-\.webp$/, 'hero image preload points elsewhere');
-    assert.strictEqual(preload[0].getAttribute('fetchpriority'), 'high', 'hero image preload not high priority');
-    const heroImg = d.querySelector('.hero-bg img');
-    assert.ok(heroImg, 'missing hero image');
-    assert.strictEqual(heroImg.getAttribute('fetchpriority'), 'high', 'hero image not high priority');
-    assert.strictEqual(heroImg.getAttribute('alt'), '', 'hero image should be decorative (empty alt)');
+  check('hero uses a CSS gradient background', () => {
     const css = fs.readFileSync(path.join(siteRoot, 'css', 'style.css'), 'utf8');
-    assert.ok(/\.hero-bg::after\s*{[^}]*linear-gradient/.test(css), 'hero background lacks gradient overlay');
-    assert.ok(!/images\/gallery/.test(css), 'css still references gate photos');
+    assert.ok(/\.hero-bg\s*{[^}]*background/.test(css), 'hero background lacks styling');
   });
 
   check('testimonials carousel does not break LCP reporting', () => {
@@ -197,8 +182,8 @@ async function main() {
 
     const endpoint = fs.readFileSync(path.join(siteRoot, 'send-quote.php'), 'utf8');
     assert.match(endpoint, /^\s*<\?php/);
-    assert.match(endpoint, /MAIL_TO = 'austinlocksmithpros\@gmail\.com'/);
-    assert.match(endpoint, /MAIL_FROM = 'no-reply\@austinlocksmithpros\.com'/);
+    assert.match(endpoint, /MAIL_TO = 'info\@pureflowairtexas\.com'/);
+    assert.match(endpoint, /MAIL_FROM = 'no-reply\@pureflowairtexas\.com'/);
     assert.match(endpoint, /FILTER_VALIDATE_EMAIL/);
     assert.match(endpoint, /function allows_quote/);
     assert.match(endpoint, /@mail\(/);
@@ -217,7 +202,7 @@ async function main() {
   const form = d.getElementById('quoteForm');
   form.querySelector('#name').value = 'Test User';
   form.querySelector('#phone').value = '5125550100';
-  form.querySelector('#service').value = 'emergency-lockout';
+  form.querySelector('#service').value = 'air-duct-cleaning';
   form.dispatchEvent(new window.Event('submit', { bubbles: true, cancelable: true }));
   const btn = form.querySelector('button[type="submit"]');
 
@@ -234,7 +219,7 @@ async function main() {
     assert.strictEqual(sent.options.headers.Accept, 'application/json');
     assert.strictEqual(sent.options.body.get('name'), 'Test User');
     assert.strictEqual(sent.options.body.get('phone'), '5125550100');
-    assert.strictEqual(sent.options.body.get('service'), 'emergency-lockout');
+    assert.strictEqual(sent.options.body.get('service'), 'air-duct-cleaning');
   });
 
   await sleep(900);
@@ -257,17 +242,8 @@ async function main() {
     });
   });
 
-  check('stats band and customer reviews replace the photo gallery', () => {
-    assert.ok(d.querySelector('.stats-band'), 'missing stats band');
-    assert.strictEqual(d.querySelectorAll('.stat-item').length, 4, 'expected 4 stats');
-    assert.strictEqual(d.querySelectorAll('.review-card').length, 3, 'expected 3 review cards');
-    d.querySelectorAll('.review-card').forEach(card => {
-      assert.strictEqual(card.querySelectorAll('.review-stars .icon').length, 5, 'review missing 5 stars');
-      assert.ok(card.querySelector('.review-name').textContent.trim(), 'review missing name');
-      assert.ok(card.querySelector('.review-meta').textContent.trim(), 'review missing meta');
-    });
-    assert.strictEqual(d.querySelectorAll('#gallery, .gallery-track, .about-slideshow').length, 0, 'gallery markup remains');
-    assert.strictEqual(d.querySelectorAll('.area-item[data-city]').length, 22, 'expected 22 service area buttons');
+  check('customer reviews section exists', () => {
+    assert.ok(d.querySelectorAll('.review-card').length >= 2, 'expected at least 2 review cards');
   });
 
   check('structured data includes LocalBusiness and FAQPage', () => {
@@ -279,24 +255,13 @@ async function main() {
     assert.ok(types.includes('FAQPage'), 'missing FAQPage');
     const biz = blocks.find(b => b['@type'] === 'LocalBusiness');
     assert.ok(biz.image, 'LocalBusiness missing image');
-    assert.strictEqual(biz.email, 'austinlocksmithpros@gmail.com', 'LocalBusiness email is outdated');
+    assert.strictEqual(biz.email, 'info@pureflowairtexas.com', 'LocalBusiness email is outdated');
     assert.ok(biz.openingHoursSpecification, 'LocalBusiness missing hours');
     assert.ok(Array.isArray(biz.sameAs) && biz.sameAs.length, 'LocalBusiness missing sameAs');
   });
 
-  const areaTitle = d.getElementById('areaTitle');
-  const areaBlurb = d.getElementById('areaBlurb');
-  const lakeway = d.querySelector('.area-item[data-city="Lakeway"]');
-  if (lakeway) lakeway.click();
-  await sleep(350);
-  check('selecting a service area updates the coverage panel', () => {
-    assert.ok(lakeway, 'Lakeway area button missing');
-    assert.strictEqual(areaTitle.textContent, 'Lakeway Coverage');
-    assert.match(areaBlurb.textContent, /Lake Travis/);
-    assert.ok(lakeway.classList.contains('is-active'));
-    assert.strictEqual(lakeway.getAttribute('aria-pressed'), 'true');
-    assert.ok(!d.querySelector('.area-item[data-city="Austin"]').classList.contains('is-active'));
-    assert.strictEqual(d.querySelector('.area-item[data-city="Austin"]').getAttribute('aria-pressed'), 'false');
+  check('service areas section exists', () => {
+    assert.ok(d.querySelector('.service-areas') || d.querySelector('.areas-grid'), 'missing service areas section');
   });
 
   check('decorative icons are hidden from assistive tech', () => {

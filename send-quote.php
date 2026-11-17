@@ -177,7 +177,7 @@ if (!is_string($ip) || filter_var($ip, FILTER_VALIDATE_IP) === false) {
 }
 
 if (!allows_quote($ip)) {
-    finish(429, ['ok' => false, 'message' => 'Too many requests. Please wait a few minutes and try again, or call (737) 265-4627.']);
+    finish(429, ['ok' => false, 'message' => 'Too many requests. Please wait a few minutes and try again, or call (737) 210-3372.']);
 }
 
 $serviceLabel = $services[$service];
@@ -212,7 +212,7 @@ $sent = @mail(MAIL_TO, $subject, $body, implode("\r\n", $headers), '-f' . MAIL_F
 
 if (!$sent) {
     error_log('Austin Locksmith Pros quote form mail() failed for ' . $phoneDigits);
-    finish(500, ['ok' => false, 'message' => 'We could not send your request right now. Please call (737) 265-4627 or email info@pureflowairtexas.com.']);
+    finish(500, ['ok' => false, 'message' => 'We could not send your request right now. Please call (737) 210-3372 or email info@pureflowairtexas.com.']);
 }
 
 finish(200, ['ok' => true, 'message' => 'Thank you ' . $name . '! Your quote request has been sent. We will contact you at ' . $phone . ' within 24 hours.']);

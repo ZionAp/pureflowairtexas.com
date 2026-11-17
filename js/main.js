@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (result === 'sent') {
             setFormStatus('Thank you! Your quote request has been sent. We will contact you within 24 hours.', 'success');
         } else if (result === 'error') {
-            setFormStatus('We could not send your request. Please call (737) 265-4627 or email austinlocksmithpros@gmail.com.', 'error');
+            setFormStatus('We could not send your request. Please call (737) 210-3372 or email info@pureflowairtexas.com.', 'error');
         }
 
         if (window.history && typeof window.history.replaceState === 'function') {
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 if (!response.ok || !payload.ok) {
-                    throw new Error(payload.message || 'We could not send your request. Please call (737) 265-4627 or email austinlocksmithpros@gmail.com.');
+                    throw new Error(payload.message || 'We could not send your request. Please call (737) 210-3372 or email info@pureflowairtexas.com.');
                 }
 
                 succeeded = true;
@@ -219,8 +219,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 800);
             } catch (error) {
                 const message = error && error.name === 'AbortError'
-                    ? 'The request timed out. Please call (737) 265-4627 or email austinlocksmithpros@gmail.com.'
-                    : 'We could not send your request. Please call (737) 265-4627 or email austinlocksmithpros@gmail.com.';
+                    ? 'The request timed out. Please call (737) 210-3372 or email info@pureflowairtexas.com.'
+                    : 'We could not send your request. Please call (737) 210-3372 or email info@pureflowairtexas.com.';
                 setFormStatus(message, 'error');
             } finally {
                 window.clearTimeout(timeoutId);
