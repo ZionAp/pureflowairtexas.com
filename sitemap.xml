@@ -3,44 +3,14 @@
     <url>
         <loc>https://pureflowairtexas.com/</loc>
         <lastmod>2026-11-17</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://pureflowairtexas.com/services/air-duct-cleaning.html</loc>
-        <lastmod>2026-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://pureflowairtexas.com/services/ac-cleaning.html</loc>
-        <lastmod>2026-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://pureflowairtexas.com/services/dryer-vent-cleaning.html</loc>
-        <lastmod>2026-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://pureflowairtexas.com/services/air-quality-testing.html</loc>
-        <lastmod>2026-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://pureflowairtexas.com/cost/air-duct-cleaning-cost-austin.html</loc>
+        <loc>https://pureflowairtexas.com/areas/</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://pureflowairtexas.com/404.html</loc>
-        <lastmod>2026-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.3</priority>
     </url>
     <url>
         <loc>https://pureflowairtexas.com/areas/austin.html</loc>
@@ -49,13 +19,13 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://pureflowairtexas.com/areas/round-rock.html</loc>
+        <loc>https://pureflowairtexas.com/areas/cedar-park.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://pureflowairtexas.com/areas/cedar-park.html</loc>
+        <loc>https://pureflowairtexas.com/areas/dripping-springs.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -73,39 +43,99 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://pureflowairtexas.com/problems/weak-airflow.html</loc>
+        <loc>https://pureflowairtexas.com/areas/lakeway.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://pureflowairtexas.com/problems/dust-keeps-coming-back.html</loc>
+        <loc>https://pureflowairtexas.com/areas/round-rock.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://pureflowairtexas.com/problems/one-room-wont-cool.html</loc>
+        <loc>https://pureflowairtexas.com/blog/</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://pureflowairtexas.com/blog/how-to-choose-air-duct-cleaning-company-austin.html</loc>
-        <lastmod>2026-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://pureflowairtexas.com/neighborhoods/zilker.html</loc>
-        <lastmod>2026-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://pureflowairtexas.com/blog/how-often-clean-air-ducts.html</loc>
         <lastmod>2026-11-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/blog/how-to-choose-air-duct-cleaning-company-austin.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/contact.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/cost/air-duct-cleaning-cost-austin.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/neighborhoods/zilker.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/problems/dust-keeps-coming-back.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/problems/one-room-wont-cool.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/problems/weak-airflow.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/service-areas.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/services/ac-cleaning.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/services/air-duct-cleaning.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/services/air-quality-testing.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/services/dryer-vent-cleaning.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset>

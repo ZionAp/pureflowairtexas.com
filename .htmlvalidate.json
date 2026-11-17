@@ -2,6 +2,7 @@
   "extends": ["html-validate:recommended"],
   "rules": {
     "require-sri": "off",
-    "no-inline-style": "off"
+    "no-inline-style": "off",
+    "tel-non-breaking": "off"
   }
 }
