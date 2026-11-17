@@ -41,11 +41,11 @@
 :root {
     --primary-charcoal: #101820;
     --secondary-charcoal: #1a1f24;
-    --steel-blue: #2563eb;
-    --steel-blue-hover: #1d4ed8;
-    --burnt-orange: #c2410c;
-    --burnt-orange-hover: #9a3412;
-    --accent-gold: #B8860B;
+    --steel-blue: #0d9488;
+    --steel-blue-hover: #0f766e;
+    --burnt-orange: #f97316;
+    --burnt-orange-hover: #ea580c;
+    --accent-gold: #06b6d4;
     --text-primary: #101820;
     --text-secondary: #4a5568;
     --text-light: #475569;
@@ -454,7 +454,7 @@ a {
     min-height: 100svh;
     display: flex;
     align-items: center;
-    background-color: #0f172a;
+    background-color: #0d9488;
     overflow: hidden;
     padding-top: 120px;
 }
@@ -471,7 +471,7 @@ a {
     inset: 0;
     z-index: 1;
     overflow: hidden;
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+    background: linear-gradient(135deg, #0d9488 0%, #06b6d4 50%, #0891b2 100%);
 }
 
 .hero-bg::after {
