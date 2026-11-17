@@ -437,4 +437,27 @@ document.addEventListener('DOMContentLoaded', function () {
     if (year) {
         year.textContent = new Date().getFullYear();
     }
+
+    // Hero slideshow (rotating job photos) - starts after initial paint
+    (function() {
+        const slideshow = document.getElementById('heroSlideshow');
+        const slides = Array.from(document.querySelectorAll('.hero-slide'));
+        if (!slideshow || slides.length < 2) return;
+        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) { slides[0].classList.add('is-active'); slideshow.style.opacity = '1'; return; }
+        let current = 0;
+        function showSlide(i) {
+            slides[current].classList.remove('is-active');
+            current = (i + slides.length) % slides.length;
+            slides[current].classList.add('is-active');
+        }
+        // Delay slideshow start so LCP is measured on the gradient/text first
+        setTimeout(function() {
+            slideshow.style.display = 'block';
+            slideshow.style.display = 'block';
+            slideshow.style.opacity = '1';
+            slides[0].classList.add('is-active');
+            setInterval(function() { showSlide(current + 1); }, 5000);
+        }, 2500);
+    })();
 });

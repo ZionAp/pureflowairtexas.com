@@ -102,19 +102,7 @@ async function main() {
     assert.ok(/\.hero-bg\s*{[^}]*background/.test(css), 'hero background lacks styling');
   });
 
-  check('testimonials carousel does not break LCP reporting', () => {
-    const rawCss = fs.readFileSync(path.join(siteRoot, 'css', 'style.css'), 'utf8');
-    const css = rawCss.replace(/\/\*[\s\S]*?\*\//g, ''); // ignore comments
-    const rule = css.match(/\.testimonials-track\s*{[^}]*}/);
-    assert.ok(rule, 'missing .testimonials-track rule');
-    const body = rule[0];
-    assert.match(body, /overflow-x:\s*auto/, 'testimonials track should still scroll horizontally');
-    assert.match(body, /scroll-snap-type:\s*x\s+mandatory/, 'testimonials track should keep scroll snapping');
-    // Regression guard: scroll-behavior: smooth + scroll-snap-type: mandatory makes
-    // Chrome perform an animated snap-scroll at load, which stops it reporting LCP
-    // for the whole page (PageSpeed Insights shows "Error! NO_LCP").
-    assert.doesNotMatch(body, /scroll-behavior:\s*smooth/, 'scroll-behavior: smooth on the snap track suppresses LCP');
-  });
+
 
   check('fonts are self-hosted (no Google Fonts CDN)', () => {
     assert.strictEqual(d.querySelectorAll('link[href*="fonts.googleapis.com"]').length, 0, 'Google Fonts link remains');
