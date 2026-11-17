@@ -42,4 +42,34 @@
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
+    <url>
+        <loc>https://pureflowairtexas.com/areas/austin.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/areas/round-rock.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/areas/cedar-park.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/areas/georgetown.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://pureflowairtexas.com/areas/killeen.html</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
