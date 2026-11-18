@@ -10,7 +10,13 @@ const indexPath = path.join(siteRoot, 'index.html');
 
 const errors = [];
 const vc = new VirtualConsole();
-vc.on('jsdomError', e => errors.push('jsdomError: ' + e.message));
+// jsdom's CSS parser does not understand modern syntax (e.g. image-set,
+// oklch, nesting) used in the inlined critical CSS. Browsers handle it fine,
+// so ignore only those benign parse errors while keeping real JS errors.
+vc.on('jsdomError', e => {
+    if (/Could not parse CSS stylesheet/.test(e.message)) return;
+    errors.push('jsdomError: ' + e.message);
+});
 vc.on('error', (...a) => errors.push('console.error: ' + a.join(' ')));
 
 const results = [];

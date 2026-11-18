@@ -9,8 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let headerHeight = header ? header.offsetHeight : 0;
 
-    function updateHeaderHeight() {
-        headerHeight = header ? header.offsetHeight : 0;
+    function updateHeaderHeight(entries) {
+        const entry = entries && entries[0];
+        headerHeight = entry && entry.borderBoxSize && entry.borderBoxSize[0]
+            ? entry.borderBoxSize[0].blockSize
+            : (header ? header.getBoundingClientRect().height : 0);
         document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
     }
 
