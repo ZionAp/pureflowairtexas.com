@@ -13,7 +13,10 @@
     "lint:html": "html-validate index.html areas/*.html services/*.html blog/*.html cost/*.html problems/*.html brands/*.html neighborhoods/*.html compare/*.html contact.html service-areas.html 404.html",
     "lint:css": "csstree-validator css/style.css",
     "lint": "npm run lint:html && npm run lint:css && node --check js/main.js",
-    "verify": "npm run lint && npm test"
+    "verify": "npm run lint && npm test",
+    "audit": "node ../.tools/audit/audit.mjs --site pureflow --local --screens",
+    "audit:live": "node ../.tools/audit/audit.mjs --site pureflow --live --screens",
+    "audit:full": "node ../.tools/audit/audit.mjs --site pureflow --full --screens"
   },
   "engines": {
     "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
