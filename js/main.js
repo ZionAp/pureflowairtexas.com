@@ -349,6 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'Cedar Park': [112, 102],
         'Pflugerville': [128, 108],
         'Georgetown': [118, 92],
+            'Killeen': [110, 80],
         'Leander': [108, 98],
         'Lakeway': [105, 118],
         'Bee Cave': [102, 124],
