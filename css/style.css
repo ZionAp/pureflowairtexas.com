@@ -1953,16 +1953,19 @@ a {
         background-color: var(--primary-charcoal);
         width: 100%;
         text-align: left;
-        transition: left 0.3s ease;
+        transition: left 0.3s ease, visibility 0.3s ease;
+        visibility: hidden;
         gap: 0;
         margin-left: 0;
         padding: 1rem 1.25rem 2rem;
         box-shadow: var(--shadow-large);
     }
-    
+
     .nav-menu.active {
         left: 0;
+        visibility: visible;
     }
+    
     
     .nav-menu li {
         margin: 0;
@@ -3108,4 +3111,10 @@ a {
 
 @media (max-width: 640px) {
     body { background-image: none; }
+}
+
+@media (max-width: 640px) {
+    .texas-ribbon { display: none; }
+    .testimonials-track, .gallery-track { scrollbar-width: none; -ms-overflow-style: none; }
+    .testimonials-track::-webkit-scrollbar, .gallery-track::-webkit-scrollbar { display: none; }
 }
