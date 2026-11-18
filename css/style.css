@@ -3105,3 +3105,7 @@ a {
     }
 }
 .service-link{color:#9a3412}
+
+@media (max-width: 640px) {
+    body { background-image: none; }
+}
