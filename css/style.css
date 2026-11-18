@@ -3096,9 +3096,9 @@ a {
 }
 /* final mobile spacing cleanup */
 @media (max-width: 640px) {
-    .hero { padding-bottom: 4rem; }
+    .hero { padding-bottom: 1.5rem; }
     .hero-content { gap: 1rem; }
-    .hero-visual { margin-top: 0; }
+    .hero-visual { margin-top: 1.5rem; }
     .services-preview, .services, .services-detailed, .services-preview {
         border-top: 1px solid var(--border-color);
         box-shadow: 0 -8px 24px -12px rgba(0,0,0,.08);
