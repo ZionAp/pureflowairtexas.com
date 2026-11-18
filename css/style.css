@@ -3133,3 +3133,11 @@ a {
     .nav-menu { display: none !important; }
     .nav-menu.active { display: flex !important; }
 }
+
+/* ---- Accessibility: PureFlow's light orange needs dark text / darker link shade ---- */
+.area-item.is-active,
+.area-item:hover,
+.area-item:focus-visible { color: #0f172a !important; }
+.areas-note a,
+.areas-guide-note a,
+.area-guide-link { color: #9a3412 !important; }
