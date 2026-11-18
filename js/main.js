@@ -1,4 +1,4 @@
-// Austin Locksmith Pros - JavaScript Functionality
+// PureFlow Air Texas - JavaScript Functionality
 
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('.header');
@@ -403,14 +403,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (areaGuideLink) {
                     const slug = city.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
                     areaGuideLink.href = 'areas/' + slug + '.html';
-                    areaGuideLink.setAttribute('aria-label', 'Read the ' + city + ' locksmith guide');
-                    if (areaGuideLabel) areaGuideLabel.textContent = 'Read the ' + city + ' locksmith guide';
+                    areaGuideLink.setAttribute('aria-label', 'Read the ' + city + ' air duct cleaning guide');
+                    if (areaGuideLabel) areaGuideLabel.textContent = 'Read the ' + city + ' air duct cleaning guide';
                 }
                 const areasBrowseAllLink = document.getElementById('areasBrowseAllLink');
                 if (areasBrowseAllLink) {
                     const slug = city.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
                     areasBrowseAllLink.href = 'areas/' + slug + '.html';
-                    areasBrowseAllLink.textContent = city + ' locksmith service guide';
+                    areasBrowseAllLink.textContent = city + ' air duct cleaning service guide';
                 }
 
                 areaBlurb.classList.add('is-changing');
@@ -431,6 +431,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         moveAreaMarker('Austin');
     }
+
+    // Hero photo slideshow - cycles through the job photos inside the framed card
+    (function () {
+        const slides = Array.from(document.querySelectorAll('.hero-visual-slide'));
+        if (slides.length < 2 || prefersReducedMotion) return;
+        let current = 0;
+        setInterval(function () {
+            slides[current].classList.remove('is-active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('is-active');
+        }, 5000);
+    })();
 
     // Update copyright year
     const year = document.getElementById('year');
