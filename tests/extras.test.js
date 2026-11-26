@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { JSDOM } from 'jsdom';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const siteUrl = 'https://www.austinlocksmithpros.com';
+const siteUrl = 'https://pureflowairtexas.com';
 
 // contact.html
 {

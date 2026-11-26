@@ -6,7 +6,7 @@ import { JSDOM } from 'jsdom';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const servicesDir = path.join(root, 'services');
-const siteUrl = 'https://www.austinlocksmithpros.com';
+const siteUrl = 'https://pureflowairtexas.com';
 
 const slugs = fs.readdirSync(servicesDir).filter(f => f.endsWith('.html')).map(f => f.replace('.html',''));
 

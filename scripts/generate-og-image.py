@@ -15,8 +15,8 @@ W, H = 1200, 630
 # Brand palette (mirrors css/style.css custom properties)
 BG_TOP = (12, 18, 25)      # --dark-base #0c1219
 BG_BOTTOM = (28, 39, 51)   # --dark-surface-2 #1c2733
-STEEL_BLUE = (37, 99, 235) # --steel-blue #2563eb
-ORANGE = (194, 65, 12)     # --burnt-orange #c2410c
+STEEL_BLUE = (2, 132, 199)  # --steel-blue #0284c7
+ORANGE = (16, 185, 129)     # --burnt-orange #10b981
 GOLD = (212, 160, 23)      # brighter --accent-gold for dark bg
 WHITE = (242, 245, 248)    # --dark-text
 SILVER = (167, 179, 192)   # --dark-text-secondary

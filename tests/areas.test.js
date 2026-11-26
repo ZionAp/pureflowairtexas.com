@@ -6,7 +6,7 @@ import { JSDOM } from 'jsdom';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const areasDir = path.join(root, 'areas');
-const siteUrl = 'https://www.austinlocksmithpros.com';
+const siteUrl = 'https://pureflowairtexas.com';
 
 const cities = [
   ['austin', 'Austin'],
@@ -95,8 +95,8 @@ for (const [slug, city] of cities) {
   const serviceSchema = schemas.find(schema => schema['@type'] === 'Service');
   assert.equal(serviceSchema.areaServed.name, `${city}, TX`, `${city} schema areaServed should match`);
   assert.equal(serviceSchema.provider.telephone, '+17372654627', `${city} schema phone should match`);
-  assert.equal(serviceSchema.provider.email, 'austinlocksmithpros@gmail.com', `${city} schema email should match`);
-  assert.ok(html.includes('mailto:austinlocksmithpros@gmail.com'), `${city} should include the email link`);
+  assert.equal(serviceSchema.provider.email, 'info@pureflowairtexas.com', `${city} schema email should match`);
+  assert.ok(html.includes('mailto:info@pureflowairtexas.com'), `${city} should include the email link`);
 }
 
 const hubHtml = await read('index.html');
