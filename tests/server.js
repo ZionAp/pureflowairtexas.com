@@ -35,7 +35,7 @@ const securityHeaders = {
     "base-uri 'self'",
     "object-src 'none'",
     "script-src 'self'",
-    "style-src 'self'",
+    "style-src 'self' 'unsafe-inline'",
     "font-src 'self' data:",
     "img-src 'self' data:",
     "connect-src 'self'",

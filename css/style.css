@@ -43,8 +43,8 @@
     --secondary-charcoal: #1a1f24;
     --steel-blue: #0284c7;
     --steel-blue-hover: #0369a1;
-    --burnt-orange: #10b981;
-    --burnt-orange-hover: #059669;
+    --burnt-orange: #059669;
+    --burnt-orange-hover: #047857;
     --accent-gold: #06b6d4;
     --text-primary: #101820;
     --text-secondary: #4a5568;
@@ -1778,15 +1778,15 @@ a {
     justify-content: center;
     gap: 0.5rem;
     padding: 0.9rem 0.5rem;
-    color: #0f172a;
+    color: #ffffff;
     font-weight: 600;
     font-size: 0.95rem;
-    background-color: var(--burnt-orange);
+    background-color: #047857;
     min-height: 44px;
 }
 
 .mobile-call-link--alt {
-    background-color: var(--steel-blue);
+    background-color: #0369a1;
 }
 
 .mobile-call-link:active {
@@ -1972,7 +1972,9 @@ a {
     }
 
     .nav-menu .nav-link {
-        display: block;
+        display: flex;
+        align-items: center;
+        min-height: 44px;
         padding: 0.9rem 1rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
